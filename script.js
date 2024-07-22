@@ -19,8 +19,8 @@ const monsterHealthText = document.querySelector("#monsterHealth");
 const weapons = [
   { name: "stick", power: 5 },
   { name: "dagger", power: 30 },
-  { name: "claw hammer", power: 50 },
-  { name: "sword", power: 100 },
+  { name: "axe", power: 50 },
+  { name: "longsword", power: 100 },
 ];
 const monsters = [
   {
@@ -42,19 +42,19 @@ const monsters = [
 const locations = [
   {
     name: "town square",
-    "button text": ["Go to store", "Go to cave", "Fight dragon"],
-    "button functions": [goStore, goCave, fightDragon],
-    text: 'You are in the town square. You see a sign that says "Store".',
+    "button text": ["Go to shop", "Go to cave", "Fight dragon"],
+    "button functions": [goShop, goCave, fightDragon],
+    text: 'You are in the town square. You see a sign that says "Shop".',
   },
   {
-    name: "store",
+    name: "shop",
     "button text": [
       "Buy 10 health (10 gold)",
       "Buy weapon (30 gold)",
       "Go to town square",
     ],
     "button functions": [buyHealth, buyWeapon, goTown],
-    text: "You enter the store.",
+    text: `You enter the shop. A man greets you and says "I sell weapons and health potions, come take a look!".`,
   },
   {
     name: "cave",
@@ -76,7 +76,7 @@ const locations = [
       "Go to town square",
     ],
     "button functions": [goTown, goTown, easterEgg],
-    text: 'The monster screams "Arg!" as it dies. You gain experience points and find gold.',
+    text: 'The monster screams "Argh!" as it dies. You gain experience points and find gold.',
   },
   {
     name: "lose",
@@ -99,7 +99,7 @@ const locations = [
 ];
 
 // initialize buttons
-button1.onclick = goStore;
+button1.onclick = goShop;
 button2.onclick = goCave;
 button3.onclick = fightDragon;
 
@@ -118,7 +118,7 @@ function goTown() {
   update(locations[0]);
 }
 
-function goStore() {
+function goShop() {
   update(locations[1]);
 }
 
@@ -133,7 +133,7 @@ function buyHealth() {
     goldText.innerText = gold;
     healthText.innerText = health;
   } else {
-    text.innerText = "You do not have enough gold to buy health.";
+    text.innerText = `You do not have enough gold to buy health. \nThe shopkeeper says, "Next time, come back with enough gold!".`;
   }
 }
 
@@ -148,10 +148,10 @@ function buyWeapon() {
       inventory.push(newWeapon);
       text.innerText += " In your inventory you have: " + inventory;
     } else {
-      text.innerText = "You do not have enough gold to buy a weapon.";
+      text.innerText = `You do not have enough gold to buy a weapon. \nThe shopkeeper says, "Come back when you have more gold!". `;
     }
   } else {
-    text.innerText = "You already have the most powerful weapon!";
+    text.innerText = `"You already have the most powerful weapon!", the shopkeeper said. "I can buy some of your older weapons, if you want."`;
     button2.innerText = "Sell weapon for 15 gold";
     button2.onclick = sellWeapon;
   }
@@ -165,7 +165,7 @@ function sellWeapon() {
     text.innerText = "You sold a " + currentWeapon + ".";
     text.innerText += " In your inventory you have: " + inventory;
   } else {
-    text.innerText = "Don't sell your only weapon!";
+    text.innerText = `"Don't sell your only weapon!", said the shopkeeper. "You better keep that for your own safety."`;
   }
 }
 
