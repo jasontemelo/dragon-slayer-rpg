@@ -1,5 +1,11 @@
 PROJECT TITLE: Dragon Slayer RPG
-VERSION 1.0
+VERSION 1.1
+
+------------------
+CHANGELOG
+V 1.1: Updated font family, font size, and text descriptions.
+V 1.0: Original release
+------------------
 
 PROJECT DESCRIPTION:
 A text-based adventure role-playing game (RPG) that is meant to showcase my understanding of basic HTML, CSS, and vanilla JavaScript (JS).
