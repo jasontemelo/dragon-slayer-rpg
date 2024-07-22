@@ -27,13 +27,8 @@ Since this is my first JavaScript project, I had to fully grasp the fundamental 
 3. different function types
 4. generating random number values
 
-HOW TO INSTALL AND RUN:
-1. Download the .zip file
-2. Extract folder
-3. Launch your preferred code editor
-4. Open the folder (dragon-slayer-rpg) in the code editor
-5. Run a live server of the program (ex. for VSCode, install and use the "Go Live" extension)
-6. Play the game and enjoy.
+QUICK PLAY GUIDE:
+1. Go to live version of game (Netlify): https://rpg-dragon-slayer.netlify.app/
 
 MAIN OBJECTIVE: Defeat the dragon to win the game.
 
