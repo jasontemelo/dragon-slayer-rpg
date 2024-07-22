@@ -3,8 +3,11 @@ VERSION 1.1
 
 ------------------
 CHANGELOG
+
 V 1.1: Updated font family, font size, and text descriptions.
+
 V 1.0: Original release
+
 ------------------
 
 PROJECT DESCRIPTION:
